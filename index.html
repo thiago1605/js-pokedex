@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--Normalize CSS-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      />
+      
+      <link rel="stylesheet" href="assets/css/global.css" />
+      <link rel="stylesheet" href="assets/css/pokedex.css" />
+      <link rel="stylesheet" href="assets/css/pokemonMoreInfo.css">
+      <title>Pokedex</title>
+    </head>
+    <body>
+      <main>
+        <section class="content">
+          <div id="h1--Input">
+            <h1>Pokedex</h1>
+            <fieldset >
+              <label for="searchInput"> <img src="./assets/images/lupa.png" alt="">
+                <input type="text" name="searchInput" id="searchInput" placeholder="Type pokemon name...">
+              </label>
+            </fieldset>
+          </div>
+        <ol id="pokemonList" class="pokemons">
+          <!--Pokemons here-->
+            <li class="pokemon" style="box-shadow: none;">
+                <a href="">
+                  <span class="name"></span>
+                  <span class="number"></span>
+                  <div class="detail">
+                      <ol class="types">
+                          <li class="type "></li>
+                      </ol>
+                      <img
+                          src=""
+                          alt=""
+                      />
+                  </div>
+                </a>
+            </li>
+        </ol>
+        <div class="pagination">
+          <button id="loadMoreBtn" type="button">Load More</button>
+        </div>
+      </section>
+
+      <section class="pokemonMoreInfoWindowArea">
+        <div class="pokemonWindowBody">
+          <div class="btnContainer">
+            <button class="backBtn">Close</button>
+          </div>
+          <div class="pokemonBig">
+            <img src="" alt="">
+          </div>
+          <div class="pokemonInfo">
+            <h1>Pokemon Name</h1>
+            
+            
+            <div class="pokemonInfo--desc">
+              <table >
+                    <thead>
+                      <tr>
+                        <th>Skills</th>
+                        <th>Level</th>
+                      </tr>
+                    </thead>
+                      <tbody>
+                        <tr>
+                        <td id="td--hp">Hp</td>
+                        <td id="td--number-01">01</td>
+                                            </tr>
+                                            <tr>
+                        <td id="td--attack">Attack</td>
+                        <td id="td--number-02">02</td>
+                                            </tr>
+                                            <tr>
+                        <td id="td--defense">Defense</td>
+                        <td id="td--number-03">03</td>
+                                            </tr>
+                                            <tr>
+                        <td id="td--specialAttack">
+                          Special Attack
+                        </td>
+                        <td id="td--number-04">04</td>
+                                            </tr>
+                                            <tr>
+                        <td id="td--specialDefense">Special Defense</td>
+                        <td id="td--number-05">05</td>
+                                            </tr>
+                                            <tr>
+                        <td id="td--speed">Speed</td>
+                        <td id="td--number-06">06</td>
+                                            </tr>
+                      </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="node_modules/vanilla-tilt/dist/vanilla-tilt.min.js"></script>
+    <script src="assets/js/pokemon_model.js"></script>
+    <script src="assets/js/poke_api.js"></script>
+    <script src="assets/js/main.js"></script>
+    </script>
+  </body>
+</html>
