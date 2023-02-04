@@ -1,4 +1,6 @@
 .pokemonMoreInfoWindowArea {
+  width: 100vw;
+  z-index: 2;
   position: fixed;
   left: 0;
   top: 0;
@@ -9,7 +11,7 @@
   transition: all ease 0.5s;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
+  overflow-y: hidden;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -22,12 +24,14 @@
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
+.containerMore {
+}
+
 .pokemonWindowBody {
-  width: 900px;
   background-color: #095a83;
   display: flex;
-  margin: 20px 0px;
-  border-radius: 1rem;
+  gap: 10rem;
+  padding: 2rem;
 }
 
 .pokemonBig {
@@ -38,38 +42,30 @@
 }
 
 .pokemonBig > img {
-  height: 300px;
-  width: auto;
-  animation: jumping 2s linear infinite;
-}
-
-@keyframes jumping {
-  from {
-    transform: rotateZ(0deg);
-  }
-  50% {
-    transform: rotateZ(5deg);
-  }
-  to {
-    transform: rotateZ(0deg);
-  }
+  
+  max-width: 17rem;
 }
 
 .pokemonInfo {
   flex: 1;
   font-family: "Hepta Slab", Helvetica, Arial;
-  padding-bottom: 50px;
 }
 
-.pokemonInfo > h1 {
-  margin-top: 50px;
+.containerMore h1 {
   color: #fff;
-  text-shadow: 0px 0px 15px #fff;
-  transform: translateZ(30px);
+  width: 100%;
+  font-size: medium;
+  background-color: #000;
+  border-radius: 0 0 1rem 1rem;
+  text-align: center;
 }
 
-.pokemonInfo > h1::first-letter {
+h1::first-letter {
   text-transform: capitalize;
+}
+
+.pokemonInfo--desc{
+  padding: 0;
 }
 
 .pokemonInfo--desc table {
@@ -83,8 +79,9 @@
 
 .pokemonInfo--desc table {
   border-collapse: collapse;
-  width: 90%;
+  width: 100%;
   text-shadow: 0px 0px 15px #fff;
+  padding: 10rem;
 }
 
 .pokemonInfo--desc table td,
@@ -100,30 +97,26 @@ th {
 }
 
 .btnContainer {
-  padding: 20px;
-  padding-bottom: 0;
-  padding-right: 0;
+  background-color: #000;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  border: none;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .backBtn {
-  background-color: #000;
+  background-color: transparent;
   color: white;
   font-size: 17px;
   outline: 0;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 12px;
-  height: 30px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border: none;
+  margin-left: 0.5rem;
 }
 
 .backBtn:hover {
-  box-shadow: 0px 0px 10px 5px #fff;
-  scale: 1.1;
+  text-shadow: 0px 1px 10px #fff;
 }
 
 .normal {
@@ -252,18 +245,57 @@ th {
   background-color: #e781a3;
 }
 
-@media screen and (max-width: 912px) {
-  .pokemonMoreInfoWindowArea {
-    justify-content: flex-start;
-    align-items: flex-start;
-   
+@media screen and (max-width: 500px) {
+  
+
+  .pokemonWindowBody{
+    display: flex;
+    justify-content: center;
+    gap: 0;
   }
-  .pokemonWindowBody {
+  .pokemonMoreInfoWindowArea {
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-    height: 180vh;
-    display: block;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  .containerMore h1 {
+    position: fixed;
+    bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+  
+  }
+
+  .pokemonBig {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    height: 20rem;
+    width: 20rem;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .pokemonBig img{
+    max-width: 10rem;
+  }
+
+  .containerMore {
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .pokemonWindowBody {
+    display: grid;
+    width: 100vw;
+    height: calc(100% - 34.4px);
+    
     border-radius: 20px;
-    padding:0;
+    padding: 2rem;
     border-radius: 0;
     box-shadow: none;
     margin: 0;
@@ -273,18 +305,7 @@ th {
     display: none;
   }
 
-  #h1--Input{
-    display: block;
-  }
 
-  #h1--Input input {
-    margin: auto;
-  }
-
-  .btnContainer {
-    width: 100%;
-  }
-  
   .backBtn {
     margin: auto;
   }
@@ -307,6 +328,7 @@ th {
   tr {
     font-size: 25px;
   }
+
 
   .pokemonInfo--desc table {
     width: 98%;

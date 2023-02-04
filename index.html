@@ -20,16 +20,14 @@
       <title>Pokedex</title>
     </head>
     <body>
+      <header id="h1--Input">
+        <h1>Pokedex</h1>
+        <fieldset >
+            <input type="text" name="searchInput" id="searchInput" placeholder="Type pokemon name...">
+        </fieldset>
+      </header>
       <main>
         <section class="content">
-          <div id="h1--Input">
-            <h1>Pokedex</h1>
-            <fieldset >
-              <label for="searchInput"> <img src="./assets/images/lupa.png" alt="">
-                <input type="text" name="searchInput" id="searchInput" placeholder="Type pokemon name...">
-              </label>
-            </fieldset>
-          </div>
         <ol id="pokemonList" class="pokemons">
           <!--Pokemons here-->
             <li class="pokemon" style="box-shadow: none;">
@@ -48,62 +46,68 @@
                 </a>
             </li>
         </ol>
-        <div class="pagination">
-          <button id="loadMoreBtn" type="button">Load More</button>
-        </div>
+       
       </section>
+      <footer class="pagination">
+        <button id="loadMoreBtn" type="button">+</button>
+      </footer>
 
       <section class="pokemonMoreInfoWindowArea">
-        <div class="pokemonWindowBody">
+        <div class="containerMore">
           <div class="btnContainer">
             <button class="backBtn">Close</button>
           </div>
-          <div class="pokemonBig">
-            <img src="" alt="">
-          </div>
-          <div class="pokemonInfo">
-            <h1>Pokemon Name</h1>
-            
-            
-            <div class="pokemonInfo--desc">
-              <table >
-                    <thead>
-                      <tr>
-                        <th>Skills</th>
-                        <th>Level</th>
-                      </tr>
-                    </thead>
-                      <tbody>
+          
+          <div class="pokemonWindowBody">
+          
+            <div class="pokemonBig">
+              <img src="" alt="">
+            </div>
+            <div class="pokemonInfo">
+          
+          
+              <div class="pokemonInfo--desc">
+                <table >
+                      <thead>
                         <tr>
-                        <td id="td--hp">Hp</td>
-                        <td id="td--number-01">01</td>
-                                            </tr>
-                                            <tr>
-                        <td id="td--attack">Attack</td>
-                        <td id="td--number-02">02</td>
-                                            </tr>
-                                            <tr>
-                        <td id="td--defense">Defense</td>
-                        <td id="td--number-03">03</td>
-                                            </tr>
-                                            <tr>
-                        <td id="td--specialAttack">
-                          Special Attack
-                        </td>
-                        <td id="td--number-04">04</td>
-                                            </tr>
-                                            <tr>
-                        <td id="td--specialDefense">Special Defense</td>
-                        <td id="td--number-05">05</td>
-                                            </tr>
-                                            <tr>
-                        <td id="td--speed">Speed</td>
-                        <td id="td--number-06">06</td>
-                                            </tr>
-                      </tbody>
-              </table>
+                          <th>Skills</th>
+                          <th>Level</th>
+                        </tr>
+                      </thead>
+                        <tbody>
+                          <tr>
+                          <td id="td--hp">Hp</td>
+                          <td id="td--number-01">01</td>
+                                              </tr>
+                                              <tr>
+                          <td id="td--attack">Attack</td>
+                          <td id="td--number-02">02</td>
+                                              </tr>
+                                              <tr>
+                          <td id="td--defense">Defense</td>
+                          <td id="td--number-03">03</td>
+                                              </tr>
+                                              <tr>
+                          <td id="td--specialAttack">
+                            Special Attack
+                          </td>
+                          <td id="td--number-04">04</td>
+                                              </tr>
+                                              <tr>
+                          <td id="td--specialDefense">Special Defense</td>
+                          <td id="td--number-05">05</td>
+                                              </tr>
+                                              <tr>
+                          <td id="td--speed">Speed</td>
+                          <td id="td--number-06">06</td>
+                                              </tr>
+                        </tbody>
+                </table>
+              </div>
             </div>
           </div>
+          <h1>Pokemon Name</h1>
+
         </div>
       </section>
     </main>

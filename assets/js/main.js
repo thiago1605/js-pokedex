@@ -13,21 +13,20 @@ const maxRecords = 151;
 
 let pokemonItem = select(".pokemons .pokemon");
 
-let inputValue1 = "pikachu";
-let inputValue = select("#searchInput");
+const inputValue1 = "pikachu";
+const inputValue = select("#searchInput");
 
 select(".pokemons .pokemon").style.display = "none";
 
 pokeApi.getPokemons(0, 300).then((pokemons = []) => {
-  inputValue.addEventListener("keyup", (e) => {
+  inputValue.addEventListener("change", (e) => {
     e.preventDefault();
     let [{ name, number, types, type, photo, statLevels }] = pokemons.filter(
-      ({ name }) => name.includes(e.target.value)
+      ({ name }) => name.includes(e.target.value.toLowerCase())
     );
 
     loadMoreBtn.remove();
 
-    console.log(e.target.value);
     classe.push(type);
 
     if (e.target.value != "" && e.target.value === name) {
@@ -101,6 +100,8 @@ const teste = () => {
         }
       );
     });
+
+    select('.content').scrollIntoView({behavior: "smooth", block: "end",})
   };
 
   loadMoreItems(offset, limit);
@@ -191,7 +192,7 @@ const insertModalToScreen = (name, type, photo, statLevels) => {
 const fillModalContent = (pokemonMapPhoto, pokemonMapName) => {
   select(".pokemonBig > img").src = pokemonMapPhoto;
   select(".pokemonBig > img").alt = pokemonMapName;
-  select(".pokemonInfo > h1").textContent = pokemonMapName;
+  select(".containerMore h1").textContent = pokemonMapName;
 };
 
 const removeColorFromModal = () => {
